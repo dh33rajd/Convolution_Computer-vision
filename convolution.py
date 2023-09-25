@@ -6,11 +6,10 @@ from PIL import Image
 def convolution(image, kernel):            #function for convolution
     
     height, width = image.shape            #finding height and width of the image
-                                           #reffered from google
                                            
     new_image = np.zeros_like(image)       #initializing a random image
     '''
-    Here padding is not done. so convolution is done from pixel in 2nd row and 2nd column. 
+    Here padding is not done. so convolution is done from the pixel in 2nd row and 2nd column. 
     ie., the pixels in the boundaries are kept 0 only.
 
     '''
@@ -43,7 +42,6 @@ def main():
     result3 = convolution(img2, kernel)     #convolving the blue component of image
     
     rgb=np.dstack((result3,result2,result1))       #stacking the three layers of image
-                                                   #reffered from google
     
     img=Image.fromarray(rgb)                       
     img.show()                                     #displaying the image
